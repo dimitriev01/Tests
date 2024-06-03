@@ -1,10 +1,12 @@
-import { RouterProvider } from "./providers"
+import { Container } from "@mui/material"
+import { FormStage } from "widgets/form-stage"
+import './styles/styles.scss'
 
 export const App = () => {
   return (
-    <RouterProvider>
-      Hello world!
-    </RouterProvider>
+    <Container maxWidth="lg">
+      <FormStage />
+    </Container>
   )
 }
 

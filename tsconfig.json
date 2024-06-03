@@ -11,6 +11,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "./src",
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -29,7 +30,7 @@
   ],
   "references": [
     {
-      "path": "./tsconfig.node.json"
+      "path": "./tsconfig.node.json",
     }
   ],
 }
