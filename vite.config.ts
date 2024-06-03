@@ -1,7 +1,26 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import {defineConfig,  UserConfig, AliasOptions, } from 'vite';
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+const alias: Partial<AliasOptions> = [
+  {find: 'pages', replacement: '/src/pages'},
+  {find: 'app', replacement: '/src/app'},
+  {find: 'entities', replacement: '/src/entities'},
+  {find: 'features', replacement: '/src/features'},
+  {find: 'processes', replacement: '/src/processes'},
+  {find: 'shared', replacement: '/src/shared'},
+  {find: 'widgets', replacement: '/src/widgets'},
+];
+
+export default defineConfig(() => {
+  return {
+    resolve: {
+      alias
+    },
+    css: {
+      modules: {
+        localsConvention: 'dashesOnly',
+        generateScopedName: '[local]_[hash:base64:2]',
+      },
+    },
+  } as UserConfig;
+});
+

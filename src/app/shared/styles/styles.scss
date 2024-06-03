@@ -1,0 +1,16 @@
+@import './reset.scss';
+@import './variables.scss';
+@import './device-sizes.scss';
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+
+  @media (max-width: $device-tablet) {
+    width: 0.5rem;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5.5rem;
+  background: rgb(105, 215, 245);
+}
