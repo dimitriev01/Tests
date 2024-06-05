@@ -5,6 +5,8 @@ import { Controller } from "react-hook-form"
 export const RadioFields = (props: IQuestionProps) => {
   const { control, question } = props
 
+  if (!question) return null
+
   return (
     <Controller
       name="answer"

@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { testSystemSlice } from 'entities/test-system';
+import { timerSlice } from 'entities/timer/model/timer.store';
 
 const rootReducer = combineReducers({
   testSystemReducer: testSystemSlice.reducer,
+  timerReducer: timerSlice.reducer,
 });
 
 export const store = configureStore({

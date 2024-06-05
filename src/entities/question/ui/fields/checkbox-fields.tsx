@@ -1,9 +1,18 @@
 import { Checkbox, FormControlLabel, FormGroup, } from "@mui/material"
 import { IQuestionProps } from "entities/question"
-import { Controller, } from "react-hook-form"
+import { Controller, ControllerRenderProps, } from "react-hook-form"
 
 export const CheckboxFields = (props: IQuestionProps) => {
   const { control, question } = props
+
+  const onChangeCheckboxHandler = (e: React.ChangeEvent<HTMLInputElement>, field: ControllerRenderProps<any, "answer">) => {
+    const updatedValue = e.target.checked
+      ? [...(field.value || []), e.target.value]
+      : (field.value || []).filter((val: any) => val !== e.target.value);
+    field.onChange(updatedValue);
+  }
+
+  if (!question) return null
 
   return (
     <Controller
@@ -20,12 +29,7 @@ export const CheckboxFields = (props: IQuestionProps) => {
               value={variant}
               control={
                 <Checkbox
-                  onChange={(e) => {
-                    const updatedValue = e.target.checked
-                      ? [...(field.value || []), e.target.value]
-                      : (field.value || []).filter((val: any) => val !== e.target.value);
-                    field.onChange(updatedValue);
-                  }}
+                  onChange={(e) => onChangeCheckboxHandler(e, field)}
                   value={variant}
                 />
               }

@@ -3,7 +3,7 @@ import { IQuestionProps } from "entities/question"
 import { Controller } from "react-hook-form"
 
 export const LongField = (props: IQuestionProps) => {
-  const { control, } = props
+  const { control } = props
 
   return (
     <Controller
