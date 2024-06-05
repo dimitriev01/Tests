@@ -1,3 +1,7 @@
+import { IQuestion } from 'entities/question';
+
 export interface ITestSystemState {
-  data: any;
+  question: IQuestion | null;
+  stage: number;
+  answers: Record<string, any>;
 }

@@ -1,3 +1,3 @@
-export interface IFormStage {
-  stage: number;
-}
+export type TypeInputs = {
+  answer: string | string[];
+};

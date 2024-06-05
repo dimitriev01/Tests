@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { testSystemSlice } from 'entities/test-system';
 
 const rootReducer = combineReducers({
-  testSystemReducer: testSystemSlice,
+  testSystemReducer: testSystemSlice.reducer,
 });
 
 export const store = configureStore({
